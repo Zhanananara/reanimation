@@ -1,0 +1,43 @@
+.text-content {
+  line-height: 1.5em;
+  margin: 4% 20%;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Libre Caslon Display", serif;
+
+  font-size: 1.5rem;
+}
+
+.content {
+  background: linear-gradient(to right, #1c92d2, #f2fcfe) !important;
+  font-family: "Modern Antiqua", cursive;
+}
+
+.main-content {
+  background-color: white !important;
+  margin: 5%;
+  color: #030304 !important;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 50px;
+  margin: 6%;
+  width: 80%;
+}
+
+.card-info {
+  width: 300px !important;
+  height: 350px;
+  li {
+    color: black !important;
+  }
+}
+.card-info:hover {
+  background-color: #83a4d4;
+  color: white;
+  li {
+    color: white !important;
+  }
+}

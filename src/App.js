@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Toastify from "./components/Toastify/Toastify";
+import MyRoutes from "./MyRoutes";
+import AuthContextProvider from "./components/context/AuthContextProvider";
+import { getNode, updateNode } from "./Firebase";
 
 function App() {
+  let hernya = updateNode(
+    "/users/",
+    {
+      username: "pasha",
+      password: "123456",
+      delete_mode: true,
+    }
+    // "-N3yjhvtaHu3Gxg4OuJr"
+  ).then((result) => {
+    console.log(result);
+  });
+
+  let user = getNode("users").then((result) => {
+    console.log(result["-N3yjhvtaHu3Gxg4OuJr"]);
+    return result;
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <AuthContextProvider> */}
+      <Toastify />
+      <MyRoutes />
+      {/* </AuthContextProvider> */}
     </div>
   );
 }
